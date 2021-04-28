@@ -9,8 +9,7 @@ import UIKit
 
 class MainController: UITableViewController {
     
-    let places = ["Зайка", "Ласточка", "Берег", "Наруто", "Рыба"]
-    let nameImagesPlases = ["cat1","cat2","cat3","cat4","cat5"]
+    var places = Place.getPlaces()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +32,14 @@ class MainController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableCell
 
-        cell.nameLable.text = places[indexPath.row]
-        cell.imagePlace.image = UIImage(named: nameImagesPlases[indexPath.row])
+        cell.nameLable.text = places[indexPath.row].name
+        cell.locationLable.text = places[indexPath.row].location
+        cell.typeLable.text = places[indexPath.row].type
+        cell.imagePlace.image = UIImage(named: places[indexPath.row].image)
         cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
         cell.imagePlace.clipsToBounds = true
         
         return cell
-    }
-    
-    // MARK: - Deligate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
     }
     
     

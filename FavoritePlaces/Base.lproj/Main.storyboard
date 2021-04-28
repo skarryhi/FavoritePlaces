@@ -78,10 +78,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descriptionLable" destination="hvm-un-umd" id="4PB-nt-qSw"/>
                                     <outlet property="imagePlace" destination="P7e-h1-XIl" id="4Ul-ht-47v"/>
-                                    <outlet property="locationLable" destination="NS9-Ye-6AR" id="IDU-8D-PGe"/>
+                                    <outlet property="locationLable" destination="hvm-un-umd" id="4PB-nt-qSw"/>
                                     <outlet property="nameLable" destination="w24-bS-SYI" id="6H0-rn-qgz"/>
+                                    <outlet property="typeLable" destination="NS9-Ye-6AR" id="J78-Pp-jL3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
