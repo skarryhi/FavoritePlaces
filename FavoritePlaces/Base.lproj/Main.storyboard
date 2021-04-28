@@ -11,18 +11,78 @@
         <scene sceneID="cr6-cf-N2k">
             <objects>
                 <tableViewController id="Vs1-UI-fGk" customClass="MainController" customModule="FavoritePlaces" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CVQ-Lr-c1q">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CVQ-Lr-c1q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zdT-Lk-MNB">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zdT-Lk-MNB" customClass="MainTableCell" customModule="FavoritePlaces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zdT-Lk-MNB" id="GW5-GQ-UIQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P7e-h1-XIl">
+                                            <rect key="frame" x="16" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="H4s-TI-VHE"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="NOa-ad-8qi"/>
+                                                <constraint firstAttribute="width" secondItem="P7e-h1-XIl" secondAttribute="height" multiplier="1:1" id="jFu-Iv-VTa"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w24-bS-SYI">
+                                            <rect key="frame" x="91" y="11" width="307" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="AUF-mp-99V"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvm-un-umd">
+                                            <rect key="frame" x="91" y="32" width="307" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="1jX-Kj-Zxy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS9-Ye-6AR">
+                                            <rect key="frame" x="91" y="53" width="307" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="9HO-0g-VNp"/>
+                                                <constraint firstAttribute="height" constant="22" id="DAn-Ta-7gl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="P7e-h1-XIl" secondAttribute="bottom" constant="10" id="7hc-Wv-hZv"/>
+                                        <constraint firstAttribute="trailing" secondItem="w24-bS-SYI" secondAttribute="trailing" constant="16" id="7tM-iU-cR9"/>
+                                        <constraint firstItem="NS9-Ye-6AR" firstAttribute="leading" secondItem="P7e-h1-XIl" secondAttribute="trailing" constant="10" id="GgB-bd-s01"/>
+                                        <constraint firstItem="w24-bS-SYI" firstAttribute="top" secondItem="GW5-GQ-UIQ" secondAttribute="top" constant="11" id="J45-6x-J4c"/>
+                                        <constraint firstAttribute="bottom" secondItem="NS9-Ye-6AR" secondAttribute="bottom" constant="10" id="Jch-dh-4CK"/>
+                                        <constraint firstAttribute="trailing" secondItem="hvm-un-umd" secondAttribute="trailing" constant="16" id="NYz-uv-VPo"/>
+                                        <constraint firstItem="P7e-h1-XIl" firstAttribute="top" secondItem="GW5-GQ-UIQ" secondAttribute="top" constant="10" id="OXF-xh-ODd"/>
+                                        <constraint firstItem="hvm-un-umd" firstAttribute="top" secondItem="GW5-GQ-UIQ" secondAttribute="top" constant="32" id="Oie-Uv-gmq"/>
+                                        <constraint firstAttribute="bottom" secondItem="hvm-un-umd" secondAttribute="bottom" constant="31" id="Uxv-SU-gvM"/>
+                                        <constraint firstItem="P7e-h1-XIl" firstAttribute="leading" secondItem="GW5-GQ-UIQ" secondAttribute="leading" constant="16" id="a6f-Yt-5nl"/>
+                                        <constraint firstItem="w24-bS-SYI" firstAttribute="leading" secondItem="P7e-h1-XIl" secondAttribute="trailing" constant="10" id="giQ-pY-Thv"/>
+                                        <constraint firstItem="hvm-un-umd" firstAttribute="leading" secondItem="P7e-h1-XIl" secondAttribute="trailing" constant="10" id="o91-Gm-9YG"/>
+                                        <constraint firstItem="P7e-h1-XIl" firstAttribute="centerY" secondItem="GW5-GQ-UIQ" secondAttribute="centerY" id="tzM-hK-TGO"/>
+                                        <constraint firstAttribute="trailing" secondItem="NS9-Ye-6AR" secondAttribute="trailing" constant="16" id="xST-4y-gN0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLable" destination="hvm-un-umd" id="4PB-nt-qSw"/>
+                                    <outlet property="imagePlace" destination="P7e-h1-XIl" id="4Ul-ht-47v"/>
+                                    <outlet property="locationLable" destination="NS9-Ye-6AR" id="IDU-8D-PGe"/>
+                                    <outlet property="nameLable" destination="w24-bS-SYI" id="6H0-rn-qgz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,7 +94,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESQ-Hw-RPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="92"/>
+            <point key="canvasLocation" x="553.62318840579712" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5AA-g2-kKr">

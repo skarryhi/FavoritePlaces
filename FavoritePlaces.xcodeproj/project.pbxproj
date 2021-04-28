@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E73263A01FB0043A328 /* MainTableCell.swift */; };
 		68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7B26398EDA00645077 /* AppDelegate.swift */; };
 		68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7D26398EDA00645077 /* SceneDelegate.swift */; };
 		68637F8326398EDA00645077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68637F8126398EDA00645077 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68134E73263A01FB0043A328 /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		68637F7826398EDA00645077 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68637F7B26398EDA00645077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68637F7D26398EDA00645077 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				68637F7B26398EDA00645077 /* AppDelegate.swift */,
 				68637F7D26398EDA00645077 /* SceneDelegate.swift */,
+				68134E73263A01FB0043A328 /* MainTableCell.swift */,
 				68637F8F26398F7200645077 /* MainController.swift */,
 				68637F8126398EDA00645077 /* Main.storyboard */,
 				68637F8426398EE000645077 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 				68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */,
 				68637F9026398F7200645077 /* MainController.swift in Sources */,
 				68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */,
+				68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
