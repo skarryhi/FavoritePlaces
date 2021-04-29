@@ -14,11 +14,7 @@ class MainController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source
@@ -38,6 +34,8 @@ class MainController: UITableViewController {
         cell.imagePlace.image = UIImage(named: places[indexPath.row].image)
         cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
         cell.imagePlace.clipsToBounds = true
+        
+        
         
         return cell
     }

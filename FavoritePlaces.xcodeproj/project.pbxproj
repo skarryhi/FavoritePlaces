@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E73263A01FB0043A328 /* MainTableCell.swift */; };
 		68134E76263A10A10043A328 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E75263A10A10043A328 /* PlaceModel.swift */; };
+		6844039E263B220F003C31E8 /* EditerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844039D263B220F003C31E8 /* EditerController.swift */; };
 		68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7B26398EDA00645077 /* AppDelegate.swift */; };
 		68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7D26398EDA00645077 /* SceneDelegate.swift */; };
 		68637F8326398EDA00645077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68637F8126398EDA00645077 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		68134E73263A01FB0043A328 /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		68134E75263A10A10043A328 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		6844039D263B220F003C31E8 /* EditerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditerController.swift; sourceTree = "<group>"; };
 		68637F7826398EDA00645077 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68637F7B26398EDA00645077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68637F7D26398EDA00645077 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				68134E73263A01FB0043A328 /* MainTableCell.swift */,
 				68134E75263A10A10043A328 /* PlaceModel.swift */,
 				68637F8F26398F7200645077 /* MainController.swift */,
+				6844039D263B220F003C31E8 /* EditerController.swift */,
 				68637F8126398EDA00645077 /* Main.storyboard */,
 				68637F8426398EE000645077 /* Assets.xcassets */,
 				68637F8626398EE000645077 /* LaunchScreen.storyboard */,
@@ -108,7 +111,7 @@
 				};
 			};
 			buildConfigurationList = 68637F7326398EDA00645077 /* Build configuration list for PBXProject "FavoritePlaces" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6844039E263B220F003C31E8 /* EditerController.swift in Sources */,
 				68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */,
 				68637F9026398F7200645077 /* MainController.swift in Sources */,
 				68134E76263A10A10043A328 /* PlaceModel.swift in Sources */,
@@ -297,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7PWTVJYTB;
 				INFOPLIST_FILE = FavoritePlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7PWTVJYTB;
 				INFOPLIST_FILE = FavoritePlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
