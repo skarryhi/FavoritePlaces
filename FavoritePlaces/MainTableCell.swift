@@ -13,6 +13,5 @@ class MainTableCell: UITableViewCell {
     @IBOutlet weak var locationLable: UILabel!
     @IBOutlet weak var typeLable: UILabel!
     @IBOutlet weak var imagePlace: UIImageView!
-    
 
 }

@@ -6,23 +6,23 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainController: UITableViewController {
     
-    var places = Place.getPlaces()
+    var places: Results<Place>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        places = realm.objects(Place.self)
         tableView.tableFooterView = UIView()
-        
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return places.count
+        return places.isEmpty ? 0 : places.count
     }
 
     
@@ -30,22 +30,18 @@ class MainController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableCell
 
         let place = places[indexPath.row]
-        
+
         cell.nameLable.text = place.name
         cell.locationLable.text = place.location
         cell.typeLable.text = place.type
+        cell.imagePlace.image = UIImage(data: place.imageData!)
         
-        if place.image == nil {
-            cell.imagePlace.image = UIImage(named: place.imagePlaceName!)
-        } else {
-            cell.imagePlace.image = place.image
-        }
-        
+
         cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
         cell.imagePlace.clipsToBounds = true
-        
-        
-        
+
+
+
         return cell
     }
     
@@ -68,7 +64,6 @@ class MainController: UITableViewController {
         }
         
         editingVC.addPlace()
-        places.append(editingVC.newPlace!)
         tableView.reloadData()
     }
 

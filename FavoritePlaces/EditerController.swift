@@ -15,12 +15,11 @@ class EditerController: UITableViewController {
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var newPlace: Place?
     var imageIsChange = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView()
         imagePlace.contentMode = .scaleAspectFit
         
@@ -69,12 +68,8 @@ class EditerController: UITableViewController {
         } else {
             addImage = #imageLiteral(resourceName: "imagePlaceholder")
         }
-        
-        newPlace = Place(name: placeName.text!,
-                         location: plaseLocation.text,
-                         type: placeType.text,
-                         image: addImage,
-                         imagePlaceName: nil)
+        let newPlace = Place(name: placeName.text!, location: plaseLocation.text, type: placeType.text, imageData: addImage.pngData())
+        StorageManager.saveObject(newPlace)
     }
 
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
