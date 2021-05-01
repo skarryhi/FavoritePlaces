@@ -10,7 +10,7 @@
 		68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E73263A01FB0043A328 /* MainTableCell.swift */; };
 		68134E76263A10A10043A328 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E75263A10A10043A328 /* PlaceModel.swift */; };
 		6844039E263B220F003C31E8 /* EditerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844039D263B220F003C31E8 /* EditerController.swift */; };
-		684403A0263D70F5003C31E8 /* storageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844039F263D70F5003C31E8 /* storageManager.swift */; };
+		684403A0263D70F5003C31E8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844039F263D70F5003C31E8 /* StorageManager.swift */; };
 		68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7B26398EDA00645077 /* AppDelegate.swift */; };
 		68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7D26398EDA00645077 /* SceneDelegate.swift */; };
 		68637F8326398EDA00645077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68637F8126398EDA00645077 /* Main.storyboard */; };
@@ -26,7 +26,7 @@
 		68134E73263A01FB0043A328 /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		68134E75263A10A10043A328 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		6844039D263B220F003C31E8 /* EditerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditerController.swift; sourceTree = "<group>"; };
-		6844039F263D70F5003C31E8 /* storageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = storageManager.swift; path = /Users/annazabluda/Desktop/FavoritePlaces/FavoritePlaces/storageManager.swift; sourceTree = "<absolute>"; };
+		6844039F263D70F5003C31E8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = /Users/annazabluda/Desktop/FavoritePlaces/FavoritePlaces/StorageManager.swift; sourceTree = "<absolute>"; };
 		68637F7826398EDA00645077 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68637F7B26398EDA00645077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68637F7D26398EDA00645077 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			children = (
 				68637F7B26398EDA00645077 /* AppDelegate.swift */,
 				68637F7D26398EDA00645077 /* SceneDelegate.swift */,
-				6844039F263D70F5003C31E8 /* storageManager.swift */,
+				6844039F263D70F5003C31E8 /* StorageManager.swift */,
 				68134E73263A01FB0043A328 /* MainTableCell.swift */,
 				68134E75263A10A10043A328 /* PlaceModel.swift */,
 				68637F8F26398F7200645077 /* MainController.swift */,
@@ -223,7 +223,7 @@
 				68134E76263A10A10043A328 /* PlaceModel.swift in Sources */,
 				68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */,
 				68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */,
-				684403A0263D70F5003C31E8 /* storageManager.swift in Sources */,
+				684403A0263D70F5003C31E8 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
