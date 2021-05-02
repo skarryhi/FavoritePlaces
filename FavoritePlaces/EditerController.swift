@@ -21,7 +21,7 @@ class EditerController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
         placeImage.contentMode = .scaleAspectFit
         
         saveButton.isEnabled = false

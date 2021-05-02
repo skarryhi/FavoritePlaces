@@ -138,6 +138,28 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="bv7-jM-0zF">
+                                        <rect key="frame" x="0.0" y="529.5" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bv7-jM-0zF" id="lGP-tL-a0K">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-aV-ATS" customClass="RaitingControl" customModule="FavoritePlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PJa-aV-ATS" firstAttribute="centerX" secondItem="lGP-tL-a0K" secondAttribute="centerX" id="mc8-Qo-met"/>
+                                                <constraint firstItem="PJa-aV-ATS" firstAttribute="centerY" secondItem="lGP-tL-a0K" secondAttribute="centerY" id="vzR-rZ-hhF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -251,8 +273,8 @@
                             <segmentedControl verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dsX-jI-ypF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="42"/>
                                 <segments>
-                                    <segment title="Name"/>
                                     <segment title="Date"/>
+                                    <segment title="Name"/>
                                 </segments>
                                 <connections>
                                     <action selector="sortSelection:" destination="xwZ-v5-Q4y" eventType="valueChanged" id="cpM-pE-6yA"/>
@@ -332,6 +354,11 @@
             <point key="canvasLocation" x="1409" y="-567"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="PJa-aV-ATS">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="6eP-gt-fxr"/>
     </inferredMetricsTieBreakers>

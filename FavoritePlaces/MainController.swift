@@ -43,6 +43,10 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     // MARK: - Table view data source
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {

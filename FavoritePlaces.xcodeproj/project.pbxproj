@@ -17,6 +17,7 @@
 		68637F8526398EE000645077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68637F8426398EE000645077 /* Assets.xcassets */; };
 		68637F8826398EE000645077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68637F8626398EE000645077 /* LaunchScreen.storyboard */; };
 		68637F9026398F7200645077 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F8F26398F7200645077 /* MainController.swift */; };
+		68AFEBD7263EF821004A75F7 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AFEBD6263EF821004A75F7 /* RatingControl.swift */; };
 		EAF195621BE17770E5371617 /* Pods_FavoritePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E98B15C8D71DC1D519806E /* Pods_FavoritePlaces.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		68637F8726398EE000645077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68637F8926398EE000645077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68637F8F26398F7200645077 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		68AFEBD6263EF821004A75F7 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		73E98B15C8D71DC1D519806E /* Pods_FavoritePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoritePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,11 +84,12 @@
 			children = (
 				68637F7B26398EDA00645077 /* AppDelegate.swift */,
 				68637F7D26398EDA00645077 /* SceneDelegate.swift */,
-				6844039F263D70F5003C31E8 /* StorageManager.swift */,
 				68134E73263A01FB0043A328 /* MainTableCell.swift */,
+				6844039F263D70F5003C31E8 /* StorageManager.swift */,
+				68AFEBD6263EF821004A75F7 /* RatingControl.swift */,
 				68134E75263A10A10043A328 /* PlaceModel.swift */,
-				68637F8F26398F7200645077 /* MainController.swift */,
 				6844039D263B220F003C31E8 /* EditerController.swift */,
+				68637F8F26398F7200645077 /* MainController.swift */,
 				68637F8126398EDA00645077 /* Main.storyboard */,
 				68637F8426398EE000645077 /* Assets.xcassets */,
 				68637F8626398EE000645077 /* LaunchScreen.storyboard */,
@@ -223,6 +226,7 @@
 				68134E76263A10A10043A328 /* PlaceModel.swift in Sources */,
 				68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */,
 				68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */,
+				68AFEBD7263EF821004A75F7 /* RatingControl.swift in Sources */,
 				684403A0263D70F5003C31E8 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
