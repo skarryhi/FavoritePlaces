@@ -179,18 +179,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-s2-j2L">
-                                <rect key="frame" x="0.0" y="88" width="414" height="39"/>
-                                <segments>
-                                    <segment title="Date"/>
-                                    <segment title="Name"/>
-                                </segments>
-                                <connections>
-                                    <action selector="sortSelection:" destination="xwZ-v5-Q4y" eventType="valueChanged" id="JxK-7r-3gQ"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QdE-46-bB6">
-                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="766"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -258,14 +248,24 @@
                                     <outlet property="delegate" destination="xwZ-v5-Q4y" id="vI7-6V-hJ5"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dsX-jI-ypF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="42"/>
+                                <segments>
+                                    <segment title="Name"/>
+                                    <segment title="Date"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="xwZ-v5-Q4y" eventType="valueChanged" id="cpM-pE-6yA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Aab-gs-9xx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QdE-46-bB6" firstAttribute="top" secondItem="NfP-s2-j2L" secondAttribute="bottom" constant="1" id="01k-Le-5XJ"/>
-                            <constraint firstItem="NfP-s2-j2L" firstAttribute="leading" secondItem="Aab-gs-9xx" secondAttribute="leading" id="Jbg-Pa-etg"/>
-                            <constraint firstItem="Aab-gs-9xx" firstAttribute="trailing" secondItem="NfP-s2-j2L" secondAttribute="trailing" id="eeF-l4-noL"/>
-                            <constraint firstItem="NfP-s2-j2L" firstAttribute="top" secondItem="Aab-gs-9xx" secondAttribute="top" id="ywd-7v-agh"/>
+                            <constraint firstItem="Aab-gs-9xx" firstAttribute="trailing" secondItem="dsX-jI-ypF" secondAttribute="trailing" id="T8b-Uo-eev"/>
+                            <constraint firstItem="dsX-jI-ypF" firstAttribute="top" secondItem="Aab-gs-9xx" secondAttribute="top" id="cdt-Yd-q5M"/>
+                            <constraint firstItem="dsX-jI-ypF" firstAttribute="leading" secondItem="Aab-gs-9xx" secondAttribute="leading" id="dke-hc-d8Z"/>
+                            <constraint firstItem="QdE-46-bB6" firstAttribute="top" secondItem="dsX-jI-ypF" secondAttribute="bottom" constant="1" id="tac-qL-sPl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Места" largeTitleDisplayMode="never" id="DkP-Zo-gqL">
@@ -282,7 +282,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="reversedSortingButton" destination="Uhi-j8-YA4" id="769-mZ-ZWr"/>
-                        <outlet property="segmentedControl" destination="NfP-s2-j2L" id="tfC-US-1VM"/>
+                        <outlet property="segmentedControl" destination="dsX-jI-ypF" id="2Ft-NQ-vBn"/>
                         <outlet property="tableView" destination="QdE-46-bB6" id="RqC-eq-FdD"/>
                     </connections>
                 </viewController>
@@ -294,7 +294,7 @@
         <scene sceneID="5AA-g2-kKr">
             <objects>
                 <navigationController id="i8I-P1-0Fd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AXn-Sn-gx4">
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFit" largeTitles="YES" id="AXn-Sn-gx4">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
