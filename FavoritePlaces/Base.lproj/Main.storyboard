@@ -145,7 +145,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-aV-ATS" customClass="RaitingControl" customModule="FavoritePlaces" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-aV-ATS" customClass="RatingControl" customModule="FavoritePlaces" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
@@ -185,6 +185,7 @@
                         <outlet property="placeName" destination="X72-sX-aWn" id="eao-bd-Py4"/>
                         <outlet property="placeType" destination="6O2-iU-Em2" id="Izd-5r-V0a"/>
                         <outlet property="plaseLocation" destination="3J4-ac-dXj" id="k8e-aW-eYm"/>
+                        <outlet property="ratingControl" destination="PJa-aV-ATS" id="Q82-aq-xNi"/>
                         <outlet property="saveButton" destination="AeA-br-SYt" id="DYC-Q6-gzr"/>
                     </connections>
                 </tableViewController>

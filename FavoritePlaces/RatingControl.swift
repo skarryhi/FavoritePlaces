@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable class RaitingControl: UIStackView {
+@IBDesignable class RatingControl: UIStackView {
     
     var rating = 0 {
         didSet {

@@ -14,9 +14,10 @@ class EditerController: UITableViewController {
     @IBOutlet weak var plaseLocation: UITextField!
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     var imageIsChange = false
-    var curentPlace: Place?
+    var curentPlace: Place!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,13 +74,15 @@ class EditerController: UITableViewController {
         let newPlace = Place(name: placeName.text!,
                              location: plaseLocation.text,
                              type: placeType.text,
-                             imageData: addImage.pngData())
+                             imageData: addImage.pngData(),
+                             rating: Double(ratingControl.rating))
         if curentPlace != nil {
             try! realm.write {
                 curentPlace?.name = newPlace.name
                 curentPlace?.location = newPlace.location
                 curentPlace?.type = newPlace.type
                 curentPlace?.imageData = newPlace.imageData
+                curentPlace?.rating = newPlace.rating
             }
         } else {
             StorageManager.saveObject(newPlace)
@@ -96,6 +99,7 @@ class EditerController: UITableViewController {
             placeType.text = curentPlace?.type
             placeImage.image = image
             placeImage.contentMode = .scaleAspectFill
+            ratingControl.rating = Int(curentPlace.rating)
         }
     }
     
