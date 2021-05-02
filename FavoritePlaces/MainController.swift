@@ -54,15 +54,17 @@ class MainController: UITableViewController {
         }
     }
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "cellEditor" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let editerVC = segue.destination as! EditerController
+            editerVC.curentPlace = places[indexPath.row]
+        }
     }
-    */
+    
     
     @IBAction func unwintSegue(_ segue: UIStoryboardSegue) {
         
@@ -70,7 +72,7 @@ class MainController: UITableViewController {
             return
         }
         
-        editingVC.addPlace()
+        editingVC.savePlace()
         tableView.reloadData()
     }
 

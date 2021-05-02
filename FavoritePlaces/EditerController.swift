@@ -9,22 +9,24 @@ import UIKit
 
 class EditerController: UITableViewController {
 
-    @IBOutlet weak var imagePlace: UIImageView!
+    @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var plaseLocation: UITextField!
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var imageIsChange = false
+    var curentPlace: Place?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        imagePlace.contentMode = .scaleAspectFit
+        placeImage.contentMode = .scaleAspectFit
         
         saveButton.isEnabled = false
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
     }
     
     // Table view delegate
@@ -59,17 +61,51 @@ class EditerController: UITableViewController {
         }
     }
     
-    func addPlace() {
+    func savePlace() {
         
         let addImage: UIImage
         
         if imageIsChange {
-            addImage = imagePlace.image!
+            addImage = placeImage.image!
         } else {
             addImage = #imageLiteral(resourceName: "imagePlaceholder")
         }
-        let newPlace = Place(name: placeName.text!, location: plaseLocation.text, type: placeType.text, imageData: addImage.pngData())
-        StorageManager.saveObject(newPlace)
+        let newPlace = Place(name: placeName.text!,
+                             location: plaseLocation.text,
+                             type: placeType.text,
+                             imageData: addImage.pngData())
+        if curentPlace != nil {
+            try! realm.write {
+                curentPlace?.name = newPlace.name
+                curentPlace?.location = newPlace.location
+                curentPlace?.type = newPlace.type
+                curentPlace?.imageData = newPlace.imageData
+            }
+        } else {
+            StorageManager.saveObject(newPlace)
+        }
+    }
+    
+    private func setupEditScreen() {
+        if curentPlace != nil {
+            setupNavigationBar()
+            imageIsChange = true
+            guard let data = curentPlace?.imageData, let image = UIImage(data: data) else { return }
+            placeName.text = curentPlace?.name
+            plaseLocation.text = curentPlace?.location
+            placeType.text = curentPlace?.type
+            placeImage.image = image
+            placeImage.contentMode = .scaleAspectFill
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        saveButton.isEnabled = true
+        title = curentPlace?.name
+        navigationItem.leftBarButtonItem = nil
     }
 
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
@@ -110,9 +146,9 @@ extension EditerController: UIImagePickerControllerDelegate, UINavigationControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imagePlace.image = info[.editedImage] as? UIImage
-        imagePlace.contentMode = .scaleAspectFill
-        imagePlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
         imageIsChange = true
         dismiss(animated: true)
     }

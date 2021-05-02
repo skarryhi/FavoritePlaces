@@ -71,6 +71,7 @@
                                     <outlet property="locationLable" destination="hvm-un-umd" id="4PB-nt-qSw"/>
                                     <outlet property="nameLable" destination="w24-bS-SYI" id="6H0-rn-qgz"/>
                                     <outlet property="typeLable" destination="NS9-Ye-6AR" id="J78-Pp-jL3"/>
+                                    <segue destination="qeb-gW-Mcz" kind="show" identifier="cellEditor" id="beD-Lb-yIn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -79,7 +80,7 @@
                             <outlet property="delegate" destination="Vs1-UI-fGk" id="IGk-pC-rhh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Места" id="mfi-r1-Nj7">
+                    <navigationItem key="navigationItem" title="Места" largeTitleDisplayMode="never" id="mfi-r1-Nj7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="QBY-Pk-QxT">
                             <connections>
                                 <segue destination="1v8-nQ-KfG" kind="presentation" id="iem-mZ-RZU"/>
@@ -91,12 +92,12 @@
             </objects>
             <point key="canvasLocation" x="553.62318840579712" y="91.741071428571431"/>
         </scene>
-        <!--Новое место-->
+        <!--Место-->
         <scene sceneID="hal-vE-OS3">
             <objects>
                 <tableViewController id="qeb-gW-Mcz" customClass="EditerController" customModule="FavoritePlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ohb-GU-13H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -229,20 +230,20 @@
                             <outlet property="delegate" destination="qeb-gW-Mcz" id="QSZ-kV-zdv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новое место" id="jck-Vb-0PM">
+                    <navigationItem key="navigationItem" title="Место" largeTitleDisplayMode="always" id="jck-Vb-0PM">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hDF-Y4-xYD">
                             <connections>
                                 <action selector="cancelAction:" destination="qeb-gW-Mcz" id="g81-rw-Lzp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AeA-br-SYt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AeA-br-SYt">
                             <connections>
                                 <segue destination="afh-69-fEU" kind="unwind" unwindAction="unwintSegue:" id="3WE-mc-nOX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagePlace" destination="Dvh-t5-5Ne" id="tBM-vt-Xh0"/>
+                        <outlet property="placeImage" destination="Dvh-t5-5Ne" id="tBM-vt-Xh0"/>
                         <outlet property="placeName" destination="X72-sX-aWn" id="eao-bd-Py4"/>
                         <outlet property="placeType" destination="6O2-iU-Em2" id="Izd-5r-V0a"/>
                         <outlet property="plaseLocation" destination="3J4-ac-dXj" id="k8e-aW-eYm"/>
@@ -252,14 +253,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af8-MS-lTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="afh-69-fEU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2271.0144927536235" y="107.8125"/>
+            <point key="canvasLocation" x="1409" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5AA-g2-kKr">
             <objects>
                 <navigationController id="i8I-P1-0Fd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AXn-Sn-gx4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AXn-Sn-gx4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
@@ -278,6 +279,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1v8-nQ-KfG" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6om-LI-Foc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sNw-DQ-Dio">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -292,9 +294,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAL-pr-5oM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1360.8695652173915" y="107.8125"/>
+            <point key="canvasLocation" x="1409" y="-567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="beD-Lb-yIn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
