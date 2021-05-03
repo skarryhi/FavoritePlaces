@@ -17,6 +17,7 @@ class EditerController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var cosmosView: CosmosView!
+    @IBOutlet weak var mapButton: UIButton!
     
     var imageIsChange = false
     var curentPlace: Place!
@@ -31,6 +32,7 @@ class EditerController: UITableViewController {
         saveButton.isEnabled = false
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
+        mapButton.layer.cornerRadius = mapButton.frame.size.height / 2
         
         cosmosView.didTouchCosmos = { rating in
             self.curentStar = rating
@@ -72,13 +74,19 @@ class EditerController: UITableViewController {
     //MARK: Novigtion
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" { return }
         
-        let mapVC = segue.destination as! MapViewController
-        mapVC.place.name = placeName.text!
-        mapVC.place.location = plaseLocation.text
-        mapVC.place.type = placeType.text
-        mapVC.place.imageData = placeImage.image?.pngData()
+        guard let identifier = segue.identifier,
+              let mapVC = segue.destination as? MapViewController
+            else { return }
+        
+        mapVC.incomeSegueIdentifire = identifier
+        
+        if identifier == "showPlace" {
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = plaseLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = placeImage.image?.pngData()
+        }
     }
     
     func savePlace() {
