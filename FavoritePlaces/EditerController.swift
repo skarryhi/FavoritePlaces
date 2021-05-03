@@ -69,15 +69,22 @@ class EditerController: UITableViewController {
         }
     }
     
+    //MARK: Novigtion
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" { return }
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place.name = placeName.text!
+        mapVC.place.location = plaseLocation.text
+        mapVC.place.type = placeType.text
+        mapVC.place.imageData = placeImage.image?.pngData()
+    }
+    
     func savePlace() {
         
-        let addImage: UIImage
-        
-        if imageIsChange {
-            addImage = placeImage.image!
-        } else {
-            addImage = #imageLiteral(resourceName: "imagePlaceholder")
-        }
+        let addImage = imageIsChange ? placeImage.image! : #imageLiteral(resourceName: "imagePlaceholder")
+
         let newPlace = Place(name: placeName.text!,
                              location: plaseLocation.text,
                              type: placeType.text,

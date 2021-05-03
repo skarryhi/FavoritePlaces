@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E73263A01FB0043A328 /* MainTableCell.swift */; };
 		68134E76263A10A10043A328 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68134E75263A10A10043A328 /* PlaceModel.swift */; };
+		681E245F26400B500090ABB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681E245E26400B500090ABB3 /* MapViewController.swift */; };
 		6844039E263B220F003C31E8 /* EditerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844039D263B220F003C31E8 /* EditerController.swift */; };
 		684403A0263D70F5003C31E8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6844039F263D70F5003C31E8 /* StorageManager.swift */; };
 		68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68637F7B26398EDA00645077 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		4EA130B62C3878D5424EF2A1 /* Pods-FavoritePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePlaces.debug.xcconfig"; path = "Target Support Files/Pods-FavoritePlaces/Pods-FavoritePlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		68134E73263A01FB0043A328 /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		68134E75263A10A10043A328 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		681E245E26400B500090ABB3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6844039D263B220F003C31E8 /* EditerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditerController.swift; sourceTree = "<group>"; };
 		6844039F263D70F5003C31E8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = /Users/annazabluda/Desktop/FavoritePlaces/FavoritePlaces/StorageManager.swift; sourceTree = "<absolute>"; };
 		68637F7826398EDA00645077 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				6844039F263D70F5003C31E8 /* StorageManager.swift */,
 				68AFEBD6263EF821004A75F7 /* RatingControl.swift */,
 				68134E75263A10A10043A328 /* PlaceModel.swift */,
+				681E245E26400B500090ABB3 /* MapViewController.swift */,
 				6844039D263B220F003C31E8 /* EditerController.swift */,
 				68637F8F26398F7200645077 /* MainController.swift */,
 				68637F8126398EDA00645077 /* Main.storyboard */,
@@ -224,6 +227,7 @@
 				68637F7C26398EDA00645077 /* AppDelegate.swift in Sources */,
 				68637F9026398F7200645077 /* MainController.swift in Sources */,
 				68134E76263A10A10043A328 /* PlaceModel.swift in Sources */,
+				681E245F26400B500090ABB3 /* MapViewController.swift in Sources */,
 				68637F7E26398EDA00645077 /* SceneDelegate.swift in Sources */,
 				68134E74263A01FB0043A328 /* MainTableCell.swift in Sources */,
 				68AFEBD7263EF821004A75F7 /* RatingControl.swift in Sources */,

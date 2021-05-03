@@ -32,11 +32,24 @@
                                                     <color key="backgroundColor" red="0.73717361690000005" green="0.73730176690000004" blue="0.73716557029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPk-Br-rzj">
+                                                    <rect key="frame" x="344" y="189" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="7CO-Cf-kh9"/>
+                                                        <constraint firstAttribute="height" constant="50" id="ONn-1a-gji"/>
+                                                    </constraints>
+                                                    <state key="normal" image="map"/>
+                                                    <connections>
+                                                        <segue destination="ykt-aE-uX2" kind="presentation" identifier="showMap" id="WA6-fY-1FQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Dvh-t5-5Ne" firstAttribute="leading" secondItem="hUA-6C-uuh" secondAttribute="leading" id="3FC-aB-UJs"/>
                                                 <constraint firstAttribute="bottom" secondItem="Dvh-t5-5Ne" secondAttribute="bottom" id="Bka-Nh-Scj"/>
+                                                <constraint firstItem="NPk-Br-rzj" firstAttribute="trailing" secondItem="hUA-6C-uuh" secondAttribute="trailingMargin" id="KzU-u7-M2X"/>
                                                 <constraint firstItem="Dvh-t5-5Ne" firstAttribute="top" secondItem="hUA-6C-uuh" secondAttribute="top" id="VNG-lc-2gA"/>
+                                                <constraint firstItem="NPk-Br-rzj" firstAttribute="bottom" secondItem="hUA-6C-uuh" secondAttribute="bottomMargin" id="d2G-ls-3vL"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dvh-t5-5Ne" secondAttribute="trailing" id="umu-AK-Vin"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -225,6 +238,48 @@
                 <exit id="afh-69-fEU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1408.6956521739132" y="89.732142857142847"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="mji-SO-ewe">
+            <objects>
+                <viewController id="ykt-aE-uX2" customClass="MapViewController" customModule="FavoritePlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GOC-Mo-ZyL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lGN-uZ-Kt0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mro-T4-7kv">
+                                <rect key="frame" x="359" y="40" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="COD-WJ-ozT"/>
+                                    <constraint firstAttribute="width" constant="20" id="iCo-G8-Xie"/>
+                                </constraints>
+                                <state key="normal" image="camcel"/>
+                                <connections>
+                                    <action selector="closeVC" destination="ykt-aE-uX2" eventType="touchUpInside" id="kxZ-wz-tZc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MhJ-Gt-NKb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lGN-uZ-Kt0" firstAttribute="trailing" secondItem="MhJ-Gt-NKb" secondAttribute="trailing" id="72H-9d-QlW"/>
+                            <constraint firstItem="lGN-uZ-Kt0" firstAttribute="top" secondItem="MhJ-Gt-NKb" secondAttribute="top" id="Gt1-ok-GhA"/>
+                            <constraint firstAttribute="bottom" secondItem="lGN-uZ-Kt0" secondAttribute="bottom" id="UTD-CE-TQc"/>
+                            <constraint firstItem="lGN-uZ-Kt0" firstAttribute="leading" secondItem="MhJ-Gt-NKb" secondAttribute="leading" id="UdA-YT-5TB"/>
+                            <constraint firstItem="Mro-T4-7kv" firstAttribute="top" secondItem="MhJ-Gt-NKb" secondAttribute="top" constant="40" id="VIK-Dh-ULH"/>
+                            <constraint firstItem="MhJ-Gt-NKb" firstAttribute="trailing" secondItem="Mro-T4-7kv" secondAttribute="trailing" constant="35" id="yfw-nf-U9v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="lGN-uZ-Kt0" id="wX6-1U-Pu7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhd-ZC-vF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298.5507246376815" y="90.401785714285708"/>
         </scene>
         <!--Места-->
         <scene sceneID="MYo-dq-AxU">
@@ -430,6 +485,8 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="camcel" width="128" height="128"/>
+        <image name="map" width="50" height="50"/>
         <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
