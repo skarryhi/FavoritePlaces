@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i8I-P1-0Fd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -261,12 +262,26 @@
                                     <action selector="closeVC" destination="ykt-aE-uX2" eventType="touchUpInside" id="kxZ-wz-tZc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owf-XS-BCl">
+                                <rect key="frame" x="334" y="723" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="qY0-uV-7G2"/>
+                                    <constraint firstAttribute="width" constant="45" id="t7z-EQ-geo"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="person-location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="ykt-aE-uX2" eventType="touchUpInside" id="eNR-MJ-R0E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MhJ-Gt-NKb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MhJ-Gt-NKb" firstAttribute="trailing" secondItem="owf-XS-BCl" secondAttribute="trailing" constant="35" id="0mj-0V-0fv"/>
                             <constraint firstItem="lGN-uZ-Kt0" firstAttribute="trailing" secondItem="MhJ-Gt-NKb" secondAttribute="trailing" id="72H-9d-QlW"/>
                             <constraint firstItem="lGN-uZ-Kt0" firstAttribute="top" secondItem="MhJ-Gt-NKb" secondAttribute="top" id="Gt1-ok-GhA"/>
+                            <constraint firstItem="MhJ-Gt-NKb" firstAttribute="bottom" secondItem="owf-XS-BCl" secondAttribute="bottom" constant="40" id="Oxr-GD-Nyw"/>
                             <constraint firstAttribute="bottom" secondItem="lGN-uZ-Kt0" secondAttribute="bottom" id="UTD-CE-TQc"/>
                             <constraint firstItem="lGN-uZ-Kt0" firstAttribute="leading" secondItem="MhJ-Gt-NKb" secondAttribute="leading" id="UdA-YT-5TB"/>
                             <constraint firstItem="Mro-T4-7kv" firstAttribute="top" secondItem="MhJ-Gt-NKb" secondAttribute="top" constant="40" id="VIK-Dh-ULH"/>
@@ -487,6 +502,7 @@
         <image name="AZ" width="25" height="24"/>
         <image name="camcel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>
+        <image name="person-location" width="256" height="256"/>
         <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

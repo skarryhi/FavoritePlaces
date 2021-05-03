@@ -7,11 +7,15 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
     var place = Place()
     var annatationIdentifire = "annatationIdentifire"
+    let locationManeger = CLLocationManager()
+    let regionInMeters = 8_000.00
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -19,6 +23,17 @@ class MapViewController: UIViewController {
 
         mapView.delegate = self
         setupPlacemark()
+        checkLocationServises()
+    }
+    
+    @IBAction func centerViewInUserLocation() {
+        
+        if let location = locationManeger.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     @IBAction func closeVC() {
@@ -50,6 +65,48 @@ class MapViewController: UIViewController {
             self.mapView.selectAnnotation(annotation, animated: true)
         }
     }
+    
+    private func checkLocationServises() {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAccuracyAuthorization()
+        } else {
+            alertController("Settings-> Location-> on")
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManeger.delegate = self
+        locationManeger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAccuracyAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            alertController("Settings-> Privacy-> Enable Location Service [FavoritePlaces] to enable the location")
+            break
+        case .notDetermined:
+            locationManeger.requestWhenInUseAuthorization()
+        case .restricted:
+            alertController("Settings-> Privacy-> Enable Location Service [FavoritePlaces] to enable the location")
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("New case is available")
+        }
+        
+    }
+    
+    private func alertController(_ message: String) {
+        let alert = UIAlertController(title: "Location service is disabled", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 
@@ -71,5 +128,11 @@ extension MapViewController: MKMapViewDelegate {
         annotationView?.rightCalloutAccessoryView = imageView
         
         return annotationView
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAccuracyAuthorization()
     }
 }
