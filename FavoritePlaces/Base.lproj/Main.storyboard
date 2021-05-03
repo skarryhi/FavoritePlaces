@@ -153,11 +153,42 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eE0-mn-iTt" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="134.5" y="28" width="145" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="eE0-mn-iTt" firstAttribute="top" secondItem="lGP-tL-a0K" secondAttribute="top" constant="28" id="0js-CG-vY0"/>
+                                                <constraint firstItem="eE0-mn-iTt" firstAttribute="centerX" secondItem="lGP-tL-a0K" secondAttribute="centerX" id="UOr-bq-aPQ"/>
                                                 <constraint firstItem="PJa-aV-ATS" firstAttribute="centerX" secondItem="lGP-tL-a0K" secondAttribute="centerX" id="mc8-Qo-met"/>
                                                 <constraint firstItem="PJa-aV-ATS" firstAttribute="centerY" secondItem="lGP-tL-a0K" secondAttribute="centerY" id="vzR-rZ-hhF"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="PJa-aV-ATS"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -181,6 +212,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cosmosView" destination="eE0-mn-iTt" id="AX3-Aq-DNV"/>
                         <outlet property="placeImage" destination="Dvh-t5-5Ne" id="tBM-vt-Xh0"/>
                         <outlet property="placeName" destination="X72-sX-aWn" id="eao-bd-Py4"/>
                         <outlet property="placeType" destination="6O2-iU-Em2" id="Izd-5r-V0a"/>
@@ -192,7 +224,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af8-MS-lTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="afh-69-fEU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="90"/>
+            <point key="canvasLocation" x="1408.6956521739132" y="89.732142857142847"/>
         </scene>
         <!--Места-->
         <scene sceneID="MYo-dq-AxU">
@@ -223,41 +255,68 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="zqy-PI-hgu">
-                                                    <rect key="frame" x="91" y="14" width="287" height="57"/>
+                                                    <rect key="frame" x="91" y="14" width="185" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXe-nQ-bjt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="185" height="18"/>
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-ZH-c9q">
-                                                            <rect key="frame" x="0.0" y="23.5" width="287" height="15"/>
+                                                            <rect key="frame" x="0.0" y="23.5" width="185" height="15"/>
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrm-Jc-lP4">
-                                                            <rect key="frame" x="0.0" y="44" width="287" height="13"/>
+                                                            <rect key="frame" x="0.0" y="44" width="185" height="13"/>
                                                             <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleAspectFill" placeholderIntrinsicWidth="129" placeholderIntrinsicHeight="31" translatesAutoresizingMaskIntoConstraints="NO" id="khb-dJ-Wsc" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="286" y="14" width="120" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="opu-ya-ERy"/>
+                                                        <constraint firstAttribute="height" constant="16" id="wO7-sF-rJK"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="d4H-lV-WAm" firstAttribute="top" secondItem="4ZE-ga-YKA" secondAttribute="top" constant="10" id="DvV-06-WEa"/>
                                                 <constraint firstItem="zqy-PI-hgu" firstAttribute="top" secondItem="4ZE-ga-YKA" secondAttribute="topMargin" constant="3" id="HhE-Jf-6j3"/>
+                                                <constraint firstItem="khb-dJ-Wsc" firstAttribute="top" secondItem="4ZE-ga-YKA" secondAttribute="top" constant="14" id="KrH-vc-brG"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zqy-PI-hgu" secondAttribute="bottom" constant="3" id="OTs-IU-pyu"/>
+                                                <constraint firstItem="khb-dJ-Wsc" firstAttribute="leading" secondItem="zqy-PI-hgu" secondAttribute="trailing" constant="10" id="QVq-ma-wS2"/>
                                                 <constraint firstItem="zqy-PI-hgu" firstAttribute="leading" secondItem="d4H-lV-WAm" secondAttribute="trailing" constant="10" id="TGx-H2-N4x"/>
                                                 <constraint firstItem="d4H-lV-WAm" firstAttribute="centerY" secondItem="4ZE-ga-YKA" secondAttribute="centerY" id="Wrg-cW-ZDg"/>
                                                 <constraint firstAttribute="bottom" secondItem="d4H-lV-WAm" secondAttribute="bottom" constant="10" id="XC2-Af-wK6"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zqy-PI-hgu" secondAttribute="trailing" constant="16" id="eY5-pM-dve"/>
                                                 <constraint firstItem="d4H-lV-WAm" firstAttribute="leading" secondItem="4ZE-ga-YKA" secondAttribute="leading" constant="16" id="nxQ-Ew-fAd"/>
+                                                <constraint firstAttribute="trailing" secondItem="khb-dJ-Wsc" secondAttribute="trailing" constant="8" id="u7V-y9-5bF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="khb-dJ-Wsc" id="d9G-1e-cTA"/>
                                             <outlet property="imagePlace" destination="d4H-lV-WAm" id="9Xm-U5-4yI"/>
                                             <outlet property="locationLable" destination="rvz-ZH-c9q" id="rxB-3a-9By"/>
                                             <outlet property="nameLable" destination="AXe-nQ-bjt" id="T7C-an-nsM"/>
@@ -358,6 +417,12 @@
     <designables>
         <designable name="PJa-aV-ATS">
             <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+        <designable name="eE0-mn-iTt">
+            <size key="intrinsicContentSize" width="145" height="25"/>
+        </designable>
+        <designable name="khb-dJ-Wsc">
+            <size key="intrinsicContentSize" width="129" height="31"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

@@ -52,29 +52,22 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         if isFiltering {
             return filteredPlaces.count
         }
-        return places.isEmpty ? 0 : places.count
+        return places.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableCell
-
-        var place = Place()
         
-        if isFiltering {
-            place = filteredPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
+        let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
 
         cell.nameLable.text = place.name
         cell.locationLable.text = place.location
         cell.typeLable.text = place.type
         cell.imagePlace.image = UIImage(data: place.imageData!)
+        cell.cosmosView.rating = place.rating
         
 
-        cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
-        cell.imagePlace.clipsToBounds = true
 
 
 
@@ -96,12 +89,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellEditor" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filteredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+            let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
             let editerVC = segue.destination as! EditerController
             editerVC.curentPlace = place
         }
